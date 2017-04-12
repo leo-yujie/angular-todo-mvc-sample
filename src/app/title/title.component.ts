@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TitleComponent implements OnInit {
 
   title = 'todos';
+  input_placeholder = 'What needs to be done?';
 
   constructor() { }
 
