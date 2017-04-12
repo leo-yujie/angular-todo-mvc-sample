@@ -20,7 +20,7 @@ export class TitleComponent implements OnInit {
     console.log($event);
   }
 
-  inputEnterKeyUp(){
+  inputEnterKeyUp() {
     console.log(this.inputValue);
   }
 }
