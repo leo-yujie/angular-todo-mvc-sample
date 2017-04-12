@@ -15,4 +15,7 @@ export class TitleComponent implements OnInit {
   ngOnInit() {
   }
 
+  inputKeyUp($event) {
+    console.log($event);
+  }
 }

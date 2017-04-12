@@ -1,4 +1,4 @@
 <header class="header">
-  <h1>{{ input_placeholder }}</h1>
-  <input class="new-todo" [placeholder]="input_placeholder" autofocus>
+  <h1>{{ title }}</h1>
+  <input class="new-todo" [placeholder]="input_placeholder" (keyup)="inputKeyUp($event)" autofocus>
 </header>
