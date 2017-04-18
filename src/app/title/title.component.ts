@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -11,6 +11,8 @@ export class TitleComponent implements OnInit {
   inputPlaceholder = 'What needs to be done?';
   inputValue = '';
 
+  @Output() addTodo = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
@@ -21,6 +23,6 @@ export class TitleComponent implements OnInit {
   }
 
   inputEnterKeyUp() {
-    console.log(this.inputValue);
+    this.addTodo.emit(this.inputValue);
   }
 }

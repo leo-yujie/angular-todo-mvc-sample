@@ -27,5 +27,11 @@ export class AppComponent {
     }
   ];
 
-
+  addTodoText(todoText) {
+    this.todoItems.push({
+      id: this.todoItems.length + 1,
+      text: todoText,
+      done: false
+    });
+  }
 }
