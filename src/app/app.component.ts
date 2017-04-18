@@ -1,37 +1,25 @@
+import { TodoService } from './todo.service';
 import { TodoItem } from './todo-item';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app works!';
+export class AppComponent implements OnInit {
 
-  todoItems: TodoItem[] = [
-    {
-      id: 1,
-      text: 'item 1',
-      done: false
-    },
-    {
-      id: 2,
-      text: 'item 2',
-      done: true
-    },
-    {
-      id: 3,
-      text: 'item 3',
-      done: false
-    }
-  ];
+  title = 'app works!';
+  todoItems: TodoItem[];
+
+  constructor(private todoService: TodoService) {
+  }
+
+  ngOnInit() {
+    this.todoItems = this.todoService.todoItems;
+  }
 
   addTodoText(todoText) {
-    this.todoItems.push({
-      id: this.todoItems.length + 1,
-      text: todoText,
-      done: false
-    });
+    this.todoService.addTodoText(todoText);
   }
 }
