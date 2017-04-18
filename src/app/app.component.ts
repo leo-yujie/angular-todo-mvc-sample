@@ -27,17 +27,5 @@ export class AppComponent {
     }
   ];
 
-  toggleItemEditing(item: TodoItem) {
-    item.oldText = item.text;
-    item.isEditing = !item.isEditing;
-  }
 
-  confirmItemEditing(item: TodoItem) {
-    this.toggleItemEditing(item);
-  }
-
-  cancelItemEditing(item: TodoItem) {
-    item.text = item.oldText;
-    this.toggleItemEditing(item);
-  }
 }
