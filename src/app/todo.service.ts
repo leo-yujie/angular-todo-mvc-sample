@@ -4,25 +4,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TodoService {
 
-  todoItems: TodoItem[] = [
-    {
-      id: 1,
-      text: 'item 1',
-      done: false
-    },
-    {
-      id: 2,
-      text: 'item 2',
-      done: true
-    },
-    {
-      id: 3,
-      text: 'item 3',
-      done: false
-    }
-  ];
+  todoItems: TodoItem[];
 
-  constructor() { }
+  constructor() {
+  }
 
   addTodoText(todoText) {
     this.todoItems.push({
